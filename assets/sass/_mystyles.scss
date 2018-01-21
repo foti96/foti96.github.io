@@ -1,0 +1,26 @@
+// 1. Import the initial variables
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/functions";
+
+// 2. Set your own initial variables
+
+$purple: #d210f3; 
+$pink: #e76784;
+$orange: #FDBB0D;
+$black: #000000;
+$white: #F4F4F4;
+// Add a serif family
+$family-serif: "Helvetica", sans-serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $pink;
+$primary-invert: $white;
+// Use the existing orange as the danger color
+$danger: $orange;
+// Use the new serif family
+$family-primary: $family-serif;
+
+
+// 6. Import the rest of Bulma
+@import "bulma/bulma.sass";

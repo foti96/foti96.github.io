@@ -1,0 +1,27 @@
+//media query mixins
+// bp = breakpoint
+@mixin bp($point) {
+    // XS phones
+    @if $point==small {
+        @media only screen and (max-width: 569px) {
+            @content;
+        }
+    }
+    @else if $point==mobile {
+        @media only screen and (min-width: 569px) and (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if $point==tablet {
+        // MD Desktop medium
+        @media only screen and (min-width: 768px) and (max-width: 1023px) {
+            @content;
+        }
+    }
+    @else if $point==wide {
+        // XS-SM phone to tablet portrait
+        @media only screen and (min-width: 1400px) {
+            @content;
+        }
+    }
+}

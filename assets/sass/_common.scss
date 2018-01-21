@@ -1,0 +1,460 @@
+* {
+    box-sizing: border-box;
+}
+
+html{
+    //allows for smooth srolling to anchor points
+    scroll-behavior: smooth;
+}
+
+//class for hidden achor points above their related div
+.hide{
+    visibility:hidden; 
+    width:0px;
+    padding: 0;
+    margin: 0;
+    margin-top: -2em;
+}
+/* header and navigation */
+
+.master-header {
+    background: $white;
+    padding: 1em 5%;
+    color: black;
+    overflow: auto;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    -webkit-box-shadow: 0 0px 20px 0 #000;
+    box-shadow: 0 0px 20px 0 #000;
+    .hamburger {
+        display: none;
+        color: black;
+        font-size: 1.5em;
+        padding: 0.3em 0.7em;
+    }
+    h2 {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        color: $pink;
+        cursor: pointer;
+    }
+    /* @primary-menu */
+    .primary-menu {
+        float: right;
+        position: relative;
+        top: 5px;
+        ul {
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            cursor: pointer;
+            padding: 0;
+            margin: 0 2em;
+            list-style: none;
+            display: inline;
+            font-size: 1.2em;
+            a{
+                color: black;
+                &:hover{
+                    color: $pink;
+                }
+            }
+        }
+
+    }
+    @include bp(small) {
+        h2{
+            text-align: center;
+        }
+        .hamburger {
+            display: inline-block;
+            float: right;
+        }
+        .primary-menu {
+            float: none;
+            height: 0px;
+            transition: height 0.5s ease;
+            overflow: hidden;
+        }
+        .primary-menu.show {
+            height: 100vh;
+            overflow: auto;
+        }
+        .primary-menu li {
+            display: block;
+            margin: 0;
+            text-align: center;
+            padding: 1em;
+        }
+        .master-header {
+            padding: 1em 0;
+        }
+    }
+    @include bp(mobile) {
+        h2{
+            text-align: center;
+        }
+        .hamburger {
+            display: inline-block;
+            float: right;
+        }
+        .primary-menu {
+            float: none;
+            height: 0px;
+            transition: height 0.5s ease;
+            overflow: hidden;
+        }
+        .primary-menu.show {
+            height: 100vh;
+            overflow: auto;
+        }
+        .primary-menu li {
+            display: block;
+            margin: 0;
+            text-align: center;
+            padding: 1em;
+        }
+        .master-header {
+            padding: 1em 0;
+        }
+    }
+} //done
+
+
+
+.hero {
+    height: 100vh;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d210f3+0,e76784+50,fdbb0d+100 */
+    background: #d210f3;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #d210f3 0%, #e76784 50%, #fdbb0d 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #d210f3 0%, #e76784 50%, #fdbb0d 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #d210f3 0%, #e76784 50%, #fdbb0d 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d210f3', endColorstr='#fdbb0d', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    position: relative;
+    .hero-content {
+        position: relative;
+        width: 50%;
+        display: inline-block;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        h1 {
+            color: $white;
+            font-size: 3.5em;
+            margin: 0;
+        }
+        h3 {
+            color: $white;
+            font-size: 2em;
+            margin: 0;
+            padding-bottom: 20px;
+        }
+        a {
+            color: $white;
+            padding: 0.2em 2em;
+            border-radius: 5px;
+            margin: 0 30px;
+            display: inline-block;
+            border: 2px solid $white;
+            &:hover{
+                background: $white;
+                color: $pink;
+                transition: all 0.5s ease;
+            }
+
+        }
+
+    }
+    @include bp(tablet){
+        .hero-content{
+            width: 70%;
+        }
+    }
+    @include bp(mobile){
+        .hero-content{
+            width: 80%;
+            a{
+                margin: 0;
+                margin-bottom: 20px;
+            }   
+        }
+    }  
+    @include bp(small){
+        .hero-content{
+            width: 70%;
+            a{
+                margin: 0;
+                margin-bottom: 20px;
+            } 
+        }
+    }
+}
+
+.about {
+    padding: 2em;
+    h2 {
+        color: $pink;
+    }
+}
+
+hr {
+    height: 0.5em;
+    background: #d210f3;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #d210f3 0%, #e76784 50%, #fdbb0d 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #d210f3 0%, #e76784 50%, #fdbb0d 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #d210f3 0%, #e76784 50%, #fdbb0d 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d210f3', endColorstr='#fdbb0d', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+}
+
+.product {
+    padding: 0 2em;
+    .pro1 {
+        padding: 1em 0 3em 0;
+        margin: 0;
+        .image {
+            padding: 0;
+            img {
+                height: 400px;
+                width: 100%;
+            }
+        }
+        .protext {
+            position: relative;
+            padding: 0 1em 0 2em;
+            h2 {
+                margin: 0;
+            }
+            a {
+                position: absolute;
+                bottom: 0;
+                left: 30%;
+                color: $pink;
+                padding: 0.2em 2em;
+                border-radius: 5px;
+                margin: 0 30px;
+                border: 2px solid $pink;
+                &:hover{
+                    background: $pink;
+                    color: $white;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+    .pro2 {
+        padding: 1em 0 3em 0;
+        margin: 0;
+        .image {
+            padding: 0;
+            img {
+                height: 400px;
+                width: 100%;
+            }
+        }
+        .protext {
+            position: relative;
+            padding: 0 2em 0 1em;
+            h2 {
+                margin: 0;
+            }
+            a {
+                position: absolute;
+                bottom: 0;
+                left: 30%;
+                color: $pink;
+                padding: 0.2em 2em;
+                border-radius: 5px;
+                margin: 0 30px;
+                border: 2px solid $pink;
+                &:hover{
+                    background: $pink;
+                    color: $white;
+                    transition: all 0.5s ease;
+                }
+            }
+        }
+    }
+    @include bp(tablet){
+        .pro2{
+            .protext{
+                padding-bottom: 2em;
+            }
+        }
+        .pro1{
+            .protext{
+                padding-top: 2em;
+            }
+        }
+        a{
+            position: relative !important;
+        }
+    }
+    @include bp(mobile){
+        .pro2{
+            .protext{
+                padding-bottom: 2em;
+            }
+        }
+        .pro1{
+            .protext{
+                padding-top: 2em;
+            }
+        }
+        div{
+            text-align: center
+        }
+        p{
+            text-align: left;
+        }
+        a{
+            position: relative !important;
+            left:0 !important;
+            display: inline-block
+        }
+    }
+    @include bp(small){
+        .pro2{
+            .protext{
+                padding-bottom: 2em;
+            }
+        }
+        .pro1{
+            .protext{
+                padding-top: 2em;
+            }
+        }
+        div{
+            text-align: center
+        }
+        p{
+            text-align: left;
+        }
+        a{
+            position: relative !important;
+            left:0 !important;
+            display: inline-block
+        }
+    }
+}
+
+.contact {
+    background: darken($white, 5%);
+    padding: 2em;
+    form {
+        width: 50%;
+        margin: auto;
+        background: $white;
+        padding: 1em;
+        h2 {
+            text-align: center;
+        }
+        .field {
+            width: 80%;
+            padding-bottom: 10px;
+            margin: auto;
+        }
+        .button-c{
+                color: $pink;
+                padding: 0.2em 2em;
+                border-radius: 5px;
+                border: 2px solid $pink;
+                &:hover{
+                    background: $pink;
+                    color: $white;
+                    transition: all 0.5s ease;
+                }
+        }
+    }
+    @include bp(tablet){
+        form{
+            width: 70%;
+        }
+    }
+    @include bp(mobile){
+        form{
+            width: 100%;
+        }
+    }
+    @include bp(small){
+        form{
+            width: 100%;
+        }
+    }
+}
+
+footer {
+    padding: 0 2em;
+    margin: 0 !important;
+    background: $white;
+    height: 70px;
+    text-align: center;
+    div{
+        display: inline-block;
+        height: inherit;
+        padding: 0 !important;
+        vertical-align: middle;
+        @include bp(mobile){
+            display: block;
+        }
+        @include bp(small){
+            display: block;
+            margin: 0;
+            p{margin: 0}
+            .company.contact-in{
+                float: none
+            }
+        }
+    }
+    .company{
+        float: left;
+        text-align: left;
+        @include bp(mobile){
+                float: none
+            }
+            @include bp(small){
+                float: none
+            }
+        }
+        .address{
+            p{
+                text-align: left;
+            }
+        }
+        .contact-in{
+           float: right;
+            text-align: left;
+            @include bp(mobile){
+                float: none
+            }
+            @include bp(small){
+                float: none
+            }
+        }
+        h2 {
+            font-size: 1.2em;
+            color: $pink;
+            margin:0;
+            position: relative;
+            top: 50%;
+            display: inline-block;
+            transform:  translateY(-50%);
+    }
+        p {
+            font-size: 0.7em;
+        }
+    }
+
